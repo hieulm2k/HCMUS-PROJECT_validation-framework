@@ -6,7 +6,7 @@ import java.util.Arrays;
 /**
  * This class used to define all validator types
  *
- * @author Le Minh Hieu
+ * @author Chi Cam Hao
  * @version 1.0.0
  * @since 1.0.0
  */
