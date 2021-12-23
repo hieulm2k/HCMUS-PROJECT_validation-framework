@@ -73,6 +73,8 @@ public abstract class Validator {
 		if (!isValid(field, value)) {
 			result.setReason(getReason(field));
 			result.setValid(false);
+		} else {
+			result.setValid(true);
 		}
 
 		return result;

@@ -3,6 +3,8 @@ package validator;
 import java.lang.annotation.Annotation;
 import java.util.Arrays;
 
+import validator.annotation.IsNotEmpty;
+
 /**
  * This class used to define all validator types
  *
@@ -11,7 +13,8 @@ import java.util.Arrays;
  * @since 1.0.0
  */
 public enum ValidatorType {
-	;
+	IS_NOT_EMPTY(IsNotEmpty.class);
+	
 	private final Class<? extends Annotation> annotation;
 
 	/**

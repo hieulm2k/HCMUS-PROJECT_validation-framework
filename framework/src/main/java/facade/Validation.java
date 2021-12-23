@@ -46,6 +46,7 @@ public class Validation {
 		Field[] fields = clazz.getDeclaredFields();
 
 		for (Field field : fields) {
+			field.setAccessible(true);
 			Annotation[] annotations = field.getAnnotations();
 
 			for (Annotation annotation : annotations) {

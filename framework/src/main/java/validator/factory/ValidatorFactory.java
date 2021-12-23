@@ -6,6 +6,7 @@ import java.util.Map;
 
 import validator.Validator;
 import validator.ValidatorType;
+import validator.impl.IsNotEmptyValidator;
 
 /**
  * This class used to define validator factory
@@ -18,6 +19,10 @@ import validator.ValidatorType;
 public class ValidatorFactory {
 	private static final Map<Class<? extends Annotation>, Validator> validatorMap = new HashMap<>();
 
+	// Validator factory prevents any other class from instantiating
+	private ValidatorFactory() {
+	}
+
 	/**
 	 * This method use to create validator by type
 	 *
@@ -29,10 +34,13 @@ public class ValidatorFactory {
 
 		if (validator == null) {
 			switch (validatorType) {
+				case IS_NOT_EMPTY:
+					validator = new IsNotEmptyValidator();
+					break;
 				default:
 					return null;
 			}
-//				validatorMap.put(validatorType.getAnnotation(), validator);
+			validatorMap.put(validatorType.getAnnotation(), validator);
 		}
 
 		return validator;
