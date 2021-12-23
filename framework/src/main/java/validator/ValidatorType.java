@@ -16,7 +16,6 @@ public enum ValidatorType {
 
 	/**
 	 * Parameterized constructor with annotation
-	 * @param annotation
 	 */
 	ValidatorType(Class<? extends Annotation> annotation) {
 		this.annotation = annotation;
@@ -33,10 +32,11 @@ public enum ValidatorType {
 
 	/**
 	 * This method used to get Validator type by annotation
+	 *
 	 * @param annotation is the annotation to get validator type
 	 * @return Validator type is the type want to get
 	 */
-	public static ValidatorType getValidatorByAnnotation(Class<? extends Annotation> annotation) {
+	public static ValidatorType getTypeByAnnotation(Class<? extends Annotation> annotation) {
 		return Arrays.stream(ValidatorType.values())
 				.filter(type -> type.getAnnotation() == annotation)
 				.findAny()

@@ -9,6 +9,7 @@ import validator.ValidatorType;
 
 /**
  * This class used to define validator factory
+ * (Factory pattern)
  *
  * @author Vo Van Ba Dat
  * @version 1.0.0
