@@ -21,7 +21,7 @@ public class IsMobilePhoneValidator extends Validator {
 	protected boolean isValid(Field field, Object value) {
 		String mobilePhone = (String) value;
 		// Length of mobile phone must be 10
-		if (mobilePhone.length() != 10) {
+		if (mobilePhone == null || mobilePhone.length() != 10) {
 			return false;
 		}
 

@@ -10,6 +10,7 @@ import validator.impl.IsEmailValidator;
 import validator.impl.IsMobilePhoneValidator;
 import validator.impl.IsNotEmptyValidator;
 import validator.impl.IsNotNullValidator;
+import validator.impl.IsNumberValidator;
 
 /**
  * This class used to define validator factory
@@ -48,6 +49,9 @@ public class ValidatorFactory {
 					break;
 				case IS_EMAIL:
 					validator = new IsEmailValidator();
+					break;
+				case IS_NUMBER:
+					validator = new IsNumberValidator();
 					break;
 				default:
 					return null;
