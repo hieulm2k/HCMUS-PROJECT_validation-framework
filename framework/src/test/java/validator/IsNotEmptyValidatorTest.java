@@ -29,6 +29,7 @@ class IsNotEmptyValidatorTest {
 		user.setName("Test");
 		user.setPhoneNumber("0123456789");
 		user.setEmail("test@gmail.com");
+		user.setAge("21");
 		Set<ValidatorResult> resultSet = validation.validate(user);
 
 		for (ValidatorResult result : resultSet) {
@@ -47,6 +48,7 @@ class IsNotEmptyValidatorTest {
 		user.setName("            ");
 		user.setPhoneNumber("0123456789");
 		user.setEmail("test@gmail.com");
+		user.setAge("21");
 		Set<ValidatorResult> resultSet = validation.validate(user);
 
 		for (ValidatorResult result : resultSet) {

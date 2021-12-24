@@ -4,6 +4,7 @@ import validator.annotation.IsEmail;
 import validator.annotation.IsMobilePhone;
 import validator.annotation.IsNotEmpty;
 import validator.annotation.IsNotNull;
+import validator.annotation.IsNumber;
 
 /**
  * This class used to define a user model for testing
@@ -22,6 +23,9 @@ public class User {
 
 	@IsEmail
 	private String email;
+
+	@IsNumber
+	private String age;
 
 	/**
 	 * Retrieves {@code {@link #name}}
@@ -75,5 +79,23 @@ public class User {
 	 */
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	/**
+	 * Retrieves {@code {@link #age}}
+	 *
+	 * @return value of {@link #age}
+	 */
+	public String getAge() {
+		return age;
+	}
+
+	/**
+	 * Sets {@code age}
+	 *
+	 * @param age the {@code java.lang.String} field
+	 */
+	public void setAge(String age) {
+		this.age = age;
 	}
 }
