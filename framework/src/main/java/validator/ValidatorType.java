@@ -4,6 +4,7 @@ import java.lang.annotation.Annotation;
 import java.util.Arrays;
 
 import validator.annotation.IsNotEmpty;
+import validator.annotation.IsNotNull;
 
 /**
  * This class used to define all validator types
@@ -13,8 +14,9 @@ import validator.annotation.IsNotEmpty;
  * @since 1.0.0
  */
 public enum ValidatorType {
-	IS_NOT_EMPTY(IsNotEmpty.class);
-	
+	IS_NOT_EMPTY(IsNotEmpty.class),
+	IS_NOT_NULL(IsNotNull.class);
+
 	private final Class<? extends Annotation> annotation;
 
 	/**

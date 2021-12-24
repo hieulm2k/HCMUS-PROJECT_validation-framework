@@ -7,6 +7,7 @@ import java.util.Map;
 import validator.Validator;
 import validator.ValidatorType;
 import validator.impl.IsNotEmptyValidator;
+import validator.impl.IsNotNullValidator;
 
 /**
  * This class used to define validator factory
@@ -36,6 +37,9 @@ public class ValidatorFactory {
 			switch (validatorType) {
 				case IS_NOT_EMPTY:
 					validator = new IsNotEmptyValidator();
+					break;
+				case IS_NOT_NULL:
+					validator = new IsNotNullValidator();
 					break;
 				default:
 					return null;
