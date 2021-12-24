@@ -11,19 +11,19 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 /**
- * This class used to define all test cases for is not empty validator
+ * This class used to define all test cases for is not null validator
  *
- * @author Le Minh Hieu
+ * @author Vo Van Ba Dat
  * @version 1.0.0
  * @since 1.0.0
  */
-class IsNotEmptyValidatorTest {
+class IsNotNullValidatorTest {
 	Validation validation = Validation.getInstance();
 	User user = new User();
 	boolean isValid = true;
 	String actualReason;
 
-	@DisplayName("Test IsNotEmptyValidation#validate valid user's name")
+	@DisplayName("Test IsNotNullValidation#validate valid user's name")
 	@Test
 	void testValidateValidName() {
 		user.setName("Test");
@@ -42,7 +42,7 @@ class IsNotEmptyValidatorTest {
 	@DisplayName("Test IsNotEmptyValidation#validate invalid user's name")
 	@Test
 	void testValidateInvalidName() {
-		user.setName("            ");
+		user.setName(null);
 		Set<ValidatorResult> resultSet = validation.validate(user);
 
 		for (ValidatorResult result : resultSet) {
@@ -53,7 +53,7 @@ class IsNotEmptyValidatorTest {
 			}
 		}
 
-		String expectReason = "Field must be not empty";
+		String expectReason = "Field must be not null";
 		Assertions.assertFalse(isValid);
 		Assertions.assertEquals(expectReason, actualReason);
 	}

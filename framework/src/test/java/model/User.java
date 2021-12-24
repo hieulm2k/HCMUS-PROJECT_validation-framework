@@ -1,6 +1,7 @@
 package model;
 
 import validator.annotation.IsNotEmpty;
+import validator.annotation.IsNotNull;
 
 /**
  * This class used to define a user model for testing
@@ -11,6 +12,7 @@ import validator.annotation.IsNotEmpty;
  */
 public class User {
 	@IsNotEmpty
+	@IsNotNull
 	private String name;
 
 	/**
