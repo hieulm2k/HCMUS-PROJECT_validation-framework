@@ -8,7 +8,8 @@ package common;
  * @since 1.0.0
  */
 public enum UserProperty {
-	NAME("name");
+	NAME("name"),
+	PHONE_NUMBER("phoneNumber");
 
 	private final String property;
 

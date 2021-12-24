@@ -1,5 +1,6 @@
 package model;
 
+import validator.annotation.IsMobilePhone;
 import validator.annotation.IsNotEmpty;
 import validator.annotation.IsNotNull;
 
@@ -14,6 +15,9 @@ public class User {
 	@IsNotEmpty
 	@IsNotNull
 	private String name;
+
+	@IsMobilePhone
+	private String phoneNumber;
 
 	/**
 	 * Retrieves {@code {@link #name}}
@@ -31,5 +35,23 @@ public class User {
 	 */
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	/**
+	 * Retrieves {@code {@link #phoneNumber}}
+	 *
+	 * @return value of {@link #phoneNumber}
+	 */
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	/**
+	 * Sets {@code phoneNumber}
+	 *
+	 * @param phoneNumber the {@code java.lang.String} field
+	 */
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 }

@@ -23,10 +23,11 @@ class IsNotEmptyValidatorTest {
 	boolean isValid = true;
 	String actualReason;
 
-	@DisplayName("Test IsNotEmptyValidation#validate valid user's name")
+	@DisplayName("Test IsNotEmptyValidator#validate valid user's name")
 	@Test
 	void testValidateValidName() {
 		user.setName("Test");
+		user.setPhoneNumber("0123456789");
 		Set<ValidatorResult> resultSet = validation.validate(user);
 
 		for (ValidatorResult result : resultSet) {
@@ -39,10 +40,11 @@ class IsNotEmptyValidatorTest {
 		Assertions.assertTrue(isValid);
 	}
 
-	@DisplayName("Test IsNotEmptyValidation#validate invalid user's name")
+	@DisplayName("Test IsNotEmptyValidator#validate invalid user's name")
 	@Test
 	void testValidateInvalidName() {
 		user.setName("            ");
+		user.setPhoneNumber("0123456789");
 		Set<ValidatorResult> resultSet = validation.validate(user);
 
 		for (ValidatorResult result : resultSet) {
