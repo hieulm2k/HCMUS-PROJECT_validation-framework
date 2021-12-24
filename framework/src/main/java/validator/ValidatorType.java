@@ -3,6 +3,7 @@ package validator;
 import java.lang.annotation.Annotation;
 import java.util.Arrays;
 
+import validator.annotation.IsMobilePhone;
 import validator.annotation.IsNotEmpty;
 import validator.annotation.IsNotNull;
 
@@ -15,7 +16,8 @@ import validator.annotation.IsNotNull;
  */
 public enum ValidatorType {
 	IS_NOT_EMPTY(IsNotEmpty.class),
-	IS_NOT_NULL(IsNotNull.class);
+	IS_NOT_NULL(IsNotNull.class),
+	IS_MOBILE_PHONE(IsMobilePhone.class);
 
 	private final Class<? extends Annotation> annotation;
 

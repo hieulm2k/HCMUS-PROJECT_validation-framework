@@ -6,6 +6,7 @@ import java.util.Map;
 
 import validator.Validator;
 import validator.ValidatorType;
+import validator.impl.IsMobilePhoneValidator;
 import validator.impl.IsNotEmptyValidator;
 import validator.impl.IsNotNullValidator;
 
@@ -40,6 +41,9 @@ public class ValidatorFactory {
 					break;
 				case IS_NOT_NULL:
 					validator = new IsNotNullValidator();
+					break;
+				case IS_MOBILE_PHONE:
+					validator = new IsMobilePhoneValidator();
 					break;
 				default:
 					return null;
