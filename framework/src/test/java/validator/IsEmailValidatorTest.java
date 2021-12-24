@@ -11,28 +11,28 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 /**
- * This class used to define all test cases for is not null validator
+ * This class used to define all test cases for is email validator
  *
- * @author Vo Van Ba Dat
+ * @author Tran Thanh Hien
  * @version 1.0.0
  * @since 1.0.0
  */
-class IsNotNullValidatorTest {
+class IsEmailValidatorTest {
 	Validation validation = Validation.getInstance();
 	User user = new User();
 	boolean isValid = true;
 	String actualReason;
 
-	@DisplayName("Test IsNotNullValidator#validate valid user's name")
+	@DisplayName("Test IsEmailValidator#validate valid user's email")
 	@Test
-	void testValidateValidName() {
+	void testValidateValidEmail() {
 		user.setName("Test");
 		user.setPhoneNumber("0123456789");
 		user.setEmail("test@gmail.com");
 		Set<ValidatorResult> resultSet = validation.validate(user);
 
 		for (ValidatorResult result : resultSet) {
-			if (Objects.equals(result.getProperty(), UserProperty.NAME.getProperty())) {
+			if (Objects.equals(result.getProperty(), UserProperty.EMAIL.getProperty())) {
 				isValid = false;
 				break;
 			}
@@ -41,23 +41,23 @@ class IsNotNullValidatorTest {
 		Assertions.assertTrue(isValid);
 	}
 
-	@DisplayName("Test IsNotEmptyValidator#validate invalid user's name")
+	@DisplayName("Test IsEmailValidator#validate invalid user's email")
 	@Test
-	void testValidateInvalidName() {
-		user.setName(null);
+	void testValidateInvalidEmail() {
+		user.setName("Test");
 		user.setPhoneNumber("0123456789");
-		user.setEmail("test@gmail.com");
+		user.setEmail("test@gmail");
 		Set<ValidatorResult> resultSet = validation.validate(user);
 
 		for (ValidatorResult result : resultSet) {
-			if (Objects.equals(result.getProperty(), UserProperty.NAME.getProperty())) {
+			if (Objects.equals(result.getProperty(), UserProperty.EMAIL.getProperty())) {
 				isValid = false;
 				actualReason = result.getReason();
 				break;
 			}
 		}
 
-		String expectReason = "Field must be not null";
+		String expectReason = "Field has wrong email format";
 		Assertions.assertFalse(isValid);
 		Assertions.assertEquals(expectReason, actualReason);
 	}

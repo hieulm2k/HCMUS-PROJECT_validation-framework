@@ -28,10 +28,11 @@ class IsMobilePhoneValidatorTest {
 	void testValidateValidPhoneNumber() {
 		user.setName("Test");
 		user.setPhoneNumber("0123456789");
+		user.setEmail("test@gmail.com");
 		Set<ValidatorResult> resultSet = validation.validate(user);
 
 		for (ValidatorResult result : resultSet) {
-			if (Objects.equals(result.getProperty(), UserProperty.NAME.getProperty())) {
+			if (Objects.equals(result.getProperty(), UserProperty.PHONE_NUMBER.getProperty())) {
 				isValid = false;
 				break;
 			}
@@ -45,6 +46,28 @@ class IsMobilePhoneValidatorTest {
 	void testValidateInvalidLengthOfPhoneNumber() {
 		user.setName("Test");
 		user.setPhoneNumber("012345");
+		user.setEmail("test@gmail.com");
+		Set<ValidatorResult> resultSet = validation.validate(user);
+
+		for (ValidatorResult result : resultSet) {
+			if (Objects.equals(result.getProperty(), UserProperty.PHONE_NUMBER.getProperty())) {
+				isValid = false;
+				actualReason = result.getReason();
+				break;
+			}
+		}
+
+		String expectReason = "Field has wrong mobile phone format";
+		Assertions.assertFalse(isValid);
+		Assertions.assertEquals(expectReason, actualReason);
+	}
+
+	@DisplayName("Test IsMobilePhoneValidator#validate invalid user's phone number")
+	@Test
+	void testValidateInvalidCharOfPhoneNumber() {
+		user.setName("Test");
+		user.setPhoneNumber("01a2b3c4d5");
+		user.setEmail("test@gmail.com");
 		Set<ValidatorResult> resultSet = validation.validate(user);
 
 		for (ValidatorResult result : resultSet) {

@@ -28,6 +28,7 @@ class IsNotEmptyValidatorTest {
 	void testValidateValidName() {
 		user.setName("Test");
 		user.setPhoneNumber("0123456789");
+		user.setEmail("test@gmail.com");
 		Set<ValidatorResult> resultSet = validation.validate(user);
 
 		for (ValidatorResult result : resultSet) {
@@ -45,6 +46,7 @@ class IsNotEmptyValidatorTest {
 	void testValidateInvalidName() {
 		user.setName("            ");
 		user.setPhoneNumber("0123456789");
+		user.setEmail("test@gmail.com");
 		Set<ValidatorResult> resultSet = validation.validate(user);
 
 		for (ValidatorResult result : resultSet) {

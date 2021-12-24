@@ -1,5 +1,6 @@
 package model;
 
+import validator.annotation.IsEmail;
 import validator.annotation.IsMobilePhone;
 import validator.annotation.IsNotEmpty;
 import validator.annotation.IsNotNull;
@@ -18,6 +19,9 @@ public class User {
 
 	@IsMobilePhone
 	private String phoneNumber;
+
+	@IsEmail
+	private String email;
 
 	/**
 	 * Retrieves {@code {@link #name}}
@@ -53,5 +57,23 @@ public class User {
 	 */
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
+	}
+
+	/**
+	 * Retrieves {@code {@link #email}}
+	 *
+	 * @return value of {@link #email}
+	 */
+	public String getEmail() {
+		return email;
+	}
+
+	/**
+	 * Sets {@code email}
+	 *
+	 * @param email the {@code java.lang.String} field
+	 */
+	public void setEmail(String email) {
+		this.email = email;
 	}
 }

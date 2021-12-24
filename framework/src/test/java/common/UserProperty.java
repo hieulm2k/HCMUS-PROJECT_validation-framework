@@ -9,7 +9,8 @@ package common;
  */
 public enum UserProperty {
 	NAME("name"),
-	PHONE_NUMBER("phoneNumber");
+	PHONE_NUMBER("phoneNumber"),
+	EMAIL("email");
 
 	private final String property;
 
