@@ -9,6 +9,7 @@ import validator.annotation.IsNotEmpty;
 import validator.annotation.IsNotNull;
 import validator.annotation.IsNumber;
 import validator.annotation.MatchRegexp;
+import validator.annotation.MaxValue;
 import validator.annotation.MinValue;
 
 /**
@@ -25,7 +26,8 @@ public enum ValidatorType {
 	IS_EMAIL(IsEmail.class),
 	IS_NUMBER(IsNumber.class),
 	MATCH_REGEXP(MatchRegexp.class),
-	MIN_VALUE(MinValue.class);
+	MIN_VALUE(MinValue.class),
+	MAX_VALUE(MaxValue.class);
 
 	private final Class<? extends Annotation> annotation;
 

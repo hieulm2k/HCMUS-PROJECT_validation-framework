@@ -12,6 +12,7 @@ import validator.impl.IsNotEmptyValidator;
 import validator.impl.IsNotNullValidator;
 import validator.impl.IsNumberValidator;
 import validator.impl.MatchRegexpValidator;
+import validator.impl.MaxValueValidator;
 import validator.impl.MinValueValidator;
 
 /**
@@ -60,6 +61,9 @@ public class ValidatorFactory {
 					break;
 				case MIN_VALUE:
 					validator = new MinValueValidator();
+					break;
+				case MAX_VALUE:
+					validator = new MaxValueValidator();
 					break;
 				default:
 					return null;
