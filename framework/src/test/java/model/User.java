@@ -6,6 +6,7 @@ import validator.annotation.IsNotEmpty;
 import validator.annotation.IsNotNull;
 import validator.annotation.IsNumber;
 import validator.annotation.MatchRegexp;
+import validator.annotation.MaxValue;
 import validator.annotation.MinValue;
 
 /**
@@ -28,6 +29,7 @@ public class User {
 
 	@IsNumber
 	@MinValue(min = 6)
+	@MaxValue(max = 30)
 	private String age;
 
 	@MatchRegexp(
