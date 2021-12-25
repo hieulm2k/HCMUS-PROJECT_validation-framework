@@ -44,6 +44,24 @@ public class User {
 	private String address;
 
 	/**
+	 * This is the parameterized constructor for user
+	 * @param name
+	 * @param phoneNumber
+	 * @param email
+	 * @param age
+	 * @param password
+	 * @param address
+	 */
+	public User(String name, String phoneNumber, String email, String age, String password, String address) {
+		this.name = name;
+		this.phoneNumber = phoneNumber;
+		this.email = email;
+		this.age = age;
+		this.password = password;
+		this.address = address;
+	}
+
+	/**
 	 * Retrieves {@code {@link #name}}
 	 *
 	 * @return value of {@link #name}
