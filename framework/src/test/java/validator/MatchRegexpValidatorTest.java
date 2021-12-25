@@ -11,21 +11,21 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 /**
- * This class used to define all test cases for is email validator
+ * This class used to define all test cases for match regexp validator
  *
- * @author Tran Thanh Hien
+ * @author Le Minh Hieu
  * @version 1.0.0
  * @since 1.0.0
  */
-class IsEmailValidatorTest {
+class MatchRegexpValidatorTest {
 	Validation validation = Validation.getInstance();
 	User user = new User();
 	boolean isValid = true;
 	String actualReason;
 
-	@DisplayName("Test IsEmailValidator#validate valid user's email")
+	@DisplayName("Test MatchRegexpValidator#validate valid user's password")
 	@Test
-	void testValidateValidEmail() {
+	void testValidateValidPassword() {
 		user.setName("Test");
 		user.setPhoneNumber("0123456789");
 		user.setEmail("test@gmail.com");
@@ -34,7 +34,7 @@ class IsEmailValidatorTest {
 		Set<ValidatorResult> resultSet = validation.validate(user);
 
 		for (ValidatorResult result : resultSet) {
-			if (Objects.equals(result.getProperty(), UserProperty.EMAIL.getProperty())) {
+			if (Objects.equals(result.getProperty(), UserProperty.PASSWORD.getProperty())) {
 				isValid = false;
 				break;
 			}
@@ -43,25 +43,25 @@ class IsEmailValidatorTest {
 		Assertions.assertTrue(isValid);
 	}
 
-	@DisplayName("Test IsEmailValidator#validate invalid user's email")
+	@DisplayName("Test IsAgeValidator#validate invalid user's age")
 	@Test
-	void testValidateInvalidEmail() {
+	void testValidateInvalidAge() {
 		user.setName("Test");
 		user.setPhoneNumber("0123456789");
-		user.setEmail("test@gmail");
+		user.setEmail("test@gmail.com");
 		user.setAge("21");
-		user.setPassword("Test@123");
+		user.setPassword("test");
 		Set<ValidatorResult> resultSet = validation.validate(user);
 
 		for (ValidatorResult result : resultSet) {
-			if (Objects.equals(result.getProperty(), UserProperty.EMAIL.getProperty())) {
+			if (Objects.equals(result.getProperty(), UserProperty.PASSWORD.getProperty())) {
 				isValid = false;
 				actualReason = result.getReason();
 				break;
 			}
 		}
 
-		String expectReason = "Field has wrong email format";
+		String expectReason = "Password is too weak";
 		Assertions.assertFalse(isValid);
 		Assertions.assertEquals(expectReason, actualReason);
 	}

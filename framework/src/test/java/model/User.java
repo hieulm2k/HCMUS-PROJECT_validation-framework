@@ -5,6 +5,7 @@ import validator.annotation.IsMobilePhone;
 import validator.annotation.IsNotEmpty;
 import validator.annotation.IsNotNull;
 import validator.annotation.IsNumber;
+import validator.annotation.MatchRegexp;
 
 /**
  * This class used to define a user model for testing
@@ -26,6 +27,11 @@ public class User {
 
 	@IsNumber
 	private String age;
+
+	@MatchRegexp(
+			pattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$",
+			message = "Password is too weak")
+	private String password;
 
 	/**
 	 * Retrieves {@code {@link #name}}
@@ -97,5 +103,23 @@ public class User {
 	 */
 	public void setAge(String age) {
 		this.age = age;
+	}
+
+	/**
+	 * Retrieves {@code {@link #password}}
+	 *
+	 * @return value of {@link #password}
+	 */
+	public String getPassword() {
+		return password;
+	}
+
+	/**
+	 * Sets {@code password}
+	 *
+	 * @param password the {@code java.lang.String} field
+	 */
+	public void setPassword(String password) {
+		this.password = password;
 	}
 }
