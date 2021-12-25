@@ -11,6 +11,7 @@ import validator.impl.IsMobilePhoneValidator;
 import validator.impl.IsNotEmptyValidator;
 import validator.impl.IsNotNullValidator;
 import validator.impl.IsNumberValidator;
+import validator.impl.MatchRegexpValidator;
 
 /**
  * This class used to define validator factory
@@ -52,6 +53,9 @@ public class ValidatorFactory {
 					break;
 				case IS_NUMBER:
 					validator = new IsNumberValidator();
+					break;
+				case MATCH_REGEXP:
+					validator = new MatchRegexpValidator();
 					break;
 				default:
 					return null;
