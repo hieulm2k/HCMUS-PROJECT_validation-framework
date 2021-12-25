@@ -9,6 +9,7 @@ import validator.annotation.IsNotEmpty;
 import validator.annotation.IsNotNull;
 import validator.annotation.IsNumber;
 import validator.annotation.MatchRegexp;
+import validator.annotation.MaxLength;
 import validator.annotation.MaxValue;
 import validator.annotation.MinLength;
 import validator.annotation.MinValue;
@@ -29,7 +30,8 @@ public enum ValidatorType {
 	MATCH_REGEXP(MatchRegexp.class),
 	MIN_VALUE(MinValue.class),
 	MAX_VALUE(MaxValue.class),
-	MIN_LENGTH(MinLength.class);
+	MIN_LENGTH(MinLength.class),
+	MAX_LENGTH(MaxLength.class);
 
 	private final Class<? extends Annotation> annotation;
 
