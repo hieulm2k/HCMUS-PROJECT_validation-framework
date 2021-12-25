@@ -12,6 +12,7 @@ import validator.impl.IsNotEmptyValidator;
 import validator.impl.IsNotNullValidator;
 import validator.impl.IsNumberValidator;
 import validator.impl.MatchRegexpValidator;
+import validator.impl.MinValueValidator;
 
 /**
  * This class used to define validator factory
@@ -56,6 +57,9 @@ public class ValidatorFactory {
 					break;
 				case MATCH_REGEXP:
 					validator = new MatchRegexpValidator();
+					break;
+				case MIN_VALUE:
+					validator = new MinValueValidator();
 					break;
 				default:
 					return null;

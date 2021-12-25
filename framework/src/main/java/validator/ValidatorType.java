@@ -9,6 +9,7 @@ import validator.annotation.IsNotEmpty;
 import validator.annotation.IsNotNull;
 import validator.annotation.IsNumber;
 import validator.annotation.MatchRegexp;
+import validator.annotation.MinValue;
 
 /**
  * This class used to define all validator types
@@ -23,7 +24,8 @@ public enum ValidatorType {
 	IS_MOBILE_PHONE(IsMobilePhone.class),
 	IS_EMAIL(IsEmail.class),
 	IS_NUMBER(IsNumber.class),
-	MATCH_REGEXP(MatchRegexp.class);
+	MATCH_REGEXP(MatchRegexp.class),
+	MIN_VALUE(MinValue.class);
 
 	private final Class<? extends Annotation> annotation;
 
