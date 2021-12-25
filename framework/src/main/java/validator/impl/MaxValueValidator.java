@@ -7,7 +7,7 @@ import validator.annotation.MaxValue;
 
 /**
  * This class used to define max value validator
- * Check if a value is less than or equal to the max or not
+ * Check if a value is less than or equal to the max
  *
  * @author Tran Thanh Hien
  * @version 1.0.0
