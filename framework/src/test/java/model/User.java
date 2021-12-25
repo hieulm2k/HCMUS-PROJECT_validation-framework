@@ -6,6 +6,7 @@ import validator.annotation.IsNotEmpty;
 import validator.annotation.IsNotNull;
 import validator.annotation.IsNumber;
 import validator.annotation.MatchRegexp;
+import validator.annotation.MaxLength;
 import validator.annotation.MaxValue;
 import validator.annotation.MinLength;
 import validator.annotation.MinValue;
@@ -39,6 +40,7 @@ public class User {
 	private String password;
 
 	@MinLength(minLength = 10)
+	@MaxLength(maxLength = 20)
 	private String address;
 
 	/**
