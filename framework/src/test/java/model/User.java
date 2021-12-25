@@ -6,6 +6,7 @@ import validator.annotation.IsNotEmpty;
 import validator.annotation.IsNotNull;
 import validator.annotation.IsNumber;
 import validator.annotation.MatchRegexp;
+import validator.annotation.MinValue;
 
 /**
  * This class used to define a user model for testing
@@ -26,6 +27,7 @@ public class User {
 	private String email;
 
 	@IsNumber
+	@MinValue(min = 6)
 	private String age;
 
 	@MatchRegexp(
