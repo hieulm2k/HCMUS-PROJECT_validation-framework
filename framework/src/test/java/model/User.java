@@ -7,6 +7,7 @@ import validator.annotation.IsNotNull;
 import validator.annotation.IsNumber;
 import validator.annotation.MatchRegexp;
 import validator.annotation.MaxValue;
+import validator.annotation.MinLength;
 import validator.annotation.MinValue;
 
 /**
@@ -36,6 +37,9 @@ public class User {
 			pattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$",
 			message = "Password is too weak")
 	private String password;
+
+	@MinLength(minLength = 10)
+	private String address;
 
 	/**
 	 * Retrieves {@code {@link #name}}
@@ -125,5 +129,23 @@ public class User {
 	 */
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	/**
+	 * Retrieves {@code {@link #address}}
+	 *
+	 * @return value of {@link #address}
+	 */
+	public String getAddress() {
+		return address;
+	}
+
+	/**
+	 * Sets {@code address}
+	 *
+	 * @param address the {@code java.lang.String} field
+	 */
+	public void setAddress(String address) {
+		this.address = address;
 	}
 }

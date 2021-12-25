@@ -31,6 +31,7 @@ class IsMobilePhoneValidatorTest {
 		user.setEmail("test@gmail.com");
 		user.setAge("21");
 		user.setPassword("Test@123");
+		user.setAddress("Ho Chi Minh city");
 		Set<ValidatorResult> resultSet = validation.validate(user);
 
 		for (ValidatorResult result : resultSet) {
@@ -51,6 +52,7 @@ class IsMobilePhoneValidatorTest {
 		user.setEmail("test@gmail.com");
 		user.setAge("21");
 		user.setPassword("Test@123");
+		user.setAddress("Ho Chi Minh city");
 		Set<ValidatorResult> resultSet = validation.validate(user);
 
 		for (ValidatorResult result : resultSet) {
@@ -74,6 +76,7 @@ class IsMobilePhoneValidatorTest {
 		user.setEmail("test@gmail.com");
 		user.setAge("21");
 		user.setPassword("Test@123");
+		user.setAddress("Ho Chi Minh city");
 		Set<ValidatorResult> resultSet = validation.validate(user);
 
 		for (ValidatorResult result : resultSet) {

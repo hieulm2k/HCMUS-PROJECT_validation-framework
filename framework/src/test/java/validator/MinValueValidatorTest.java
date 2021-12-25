@@ -23,7 +23,7 @@ class MinValueValidatorTest {
 	boolean isValid = true;
 	String actualReason;
 
-	@DisplayName("Test MinvalueValidator#validate valid user's age")
+	@DisplayName("Test MinValueValidator#validate valid user's age")
 	@Test
 	void testValidateValidAge() {
 		user.setName("Test");
@@ -31,6 +31,7 @@ class MinValueValidatorTest {
 		user.setEmail("test@gmail.com");
 		user.setAge("21");
 		user.setPassword("Test@123");
+		user.setAddress("Ho Chi Minh city");
 		Set<ValidatorResult> resultSet = validation.validate(user);
 
 		for (ValidatorResult result : resultSet) {
@@ -43,7 +44,7 @@ class MinValueValidatorTest {
 		Assertions.assertTrue(isValid);
 	}
 
-	@DisplayName("Test IsAgeValidator#validate invalid user's age")
+	@DisplayName("Test MinValueValidator#validate invalid user's age")
 	@Test
 	void testValidateInvalidAge() {
 		user.setName("Test");
@@ -51,6 +52,7 @@ class MinValueValidatorTest {
 		user.setEmail("test@gmail.com");
 		user.setAge("4");
 		user.setPassword("Test@123");
+		user.setAddress("Ho Chi Minh city");
 		Set<ValidatorResult> resultSet = validation.validate(user);
 
 		for (ValidatorResult result : resultSet) {

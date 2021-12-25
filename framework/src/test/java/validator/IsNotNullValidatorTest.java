@@ -31,6 +31,7 @@ class IsNotNullValidatorTest {
 		user.setEmail("test@gmail.com");
 		user.setAge("21");
 		user.setPassword("Test@123");
+		user.setAddress("Ho Chi Minh city");
 		Set<ValidatorResult> resultSet = validation.validate(user);
 
 		for (ValidatorResult result : resultSet) {
@@ -43,7 +44,7 @@ class IsNotNullValidatorTest {
 		Assertions.assertTrue(isValid);
 	}
 
-	@DisplayName("Test IsNotEmptyValidator#validate invalid user's name")
+	@DisplayName("Test IsNotNullValidator#validate invalid user's name")
 	@Test
 	void testValidateInvalidName() {
 		user.setName(null);
@@ -51,6 +52,7 @@ class IsNotNullValidatorTest {
 		user.setEmail("test@gmail.com");
 		user.setAge("21");
 		user.setPassword("Test@123");
+		user.setAddress("Ho Chi Minh city");
 		Set<ValidatorResult> resultSet = validation.validate(user);
 
 		for (ValidatorResult result : resultSet) {

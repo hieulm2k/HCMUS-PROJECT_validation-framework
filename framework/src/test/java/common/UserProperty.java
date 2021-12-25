@@ -12,7 +12,8 @@ public enum UserProperty {
 	PHONE_NUMBER("phoneNumber"),
 	EMAIL("email"),
 	AGE("age"),
-	PASSWORD("password");
+	PASSWORD("password"),
+	ADDRESS("address");
 
 	private final String property;
 

@@ -31,6 +31,7 @@ class IsNumberValidatorTest {
 		user.setEmail("test@gmail.com");
 		user.setAge("21");
 		user.setPassword("Test@123");
+		user.setAddress("Ho Chi Minh city");
 		Set<ValidatorResult> resultSet = validation.validate(user);
 
 		for (ValidatorResult result : resultSet) {
@@ -51,6 +52,7 @@ class IsNumberValidatorTest {
 		user.setEmail("test@gmail.com");
 		user.setAge("age");
 		user.setPassword("Test@123");
+		user.setAddress("Ho Chi Minh city");
 		Set<ValidatorResult> resultSet = validation.validate(user);
 
 		String expectReason = "Field must be a number";

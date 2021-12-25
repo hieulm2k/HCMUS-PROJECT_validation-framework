@@ -31,6 +31,7 @@ class MatchRegexpValidatorTest {
 		user.setEmail("test@gmail.com");
 		user.setAge("21");
 		user.setPassword("Test@123");
+		user.setAddress("Ho Chi Minh city");
 		Set<ValidatorResult> resultSet = validation.validate(user);
 
 		for (ValidatorResult result : resultSet) {
@@ -43,7 +44,7 @@ class MatchRegexpValidatorTest {
 		Assertions.assertTrue(isValid);
 	}
 
-	@DisplayName("Test IsAgeValidator#validate invalid user's age")
+	@DisplayName("Test MatchRegexpValidator#validate invalid user's age")
 	@Test
 	void testValidateInvalidAge() {
 		user.setName("Test");
@@ -51,6 +52,7 @@ class MatchRegexpValidatorTest {
 		user.setEmail("test@gmail.com");
 		user.setAge("21");
 		user.setPassword("test");
+		user.setAddress("Ho Chi Minh city");
 		Set<ValidatorResult> resultSet = validation.validate(user);
 
 		for (ValidatorResult result : resultSet) {
